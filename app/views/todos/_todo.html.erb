@@ -1,0 +1,34 @@
+<div id="<%= dom_id todo %>" class="w-full sm:w-auto my-5 space-y-5">
+  <div>
+    <strong class="block font-medium mb-1">Title:</strong>
+    <%= todo.title %>
+  </div>
+  <div>
+    <strong class="block font-medium mb-1">Body:</strong>
+    <%= todo.body %>
+  </div>
+  <div>
+    <strong class="block font-medium mb-1">Color:</strong>
+    <%= todo.color %>
+  </div>
+  <div>
+    <strong class="block font-medium mb-1">Pinned:</strong>
+    <%= todo.pinned? ? "Yes" : "No" %>
+  </div>
+  <div>
+    <strong class="block font-medium mb-1">Deleted:</strong>
+    <%= todo.deleted? ? "Yes" : "No" %>
+  </div>
+  <div>
+    <strong class="block font-medium mb-1">Published:</strong>
+    <%= todo.published? ? "Yes" : "No" %>
+  </div>
+  <div>
+    <strong class="block font-medium mb-1">Duedate:</strong>
+    <%= todo.duedate %>
+  </div>
+  <div>
+    <strong class="block font-medium mb-1">Done:</strong>
+    <%= todo.done? ? "Yes" : "No" %>
+  </div>
+</div>
