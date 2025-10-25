@@ -10,7 +10,31 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.1].define(version: 2025_10_25_190226) do
+ActiveRecord::Schema[8.1].define(version: 2025_10_25_193839) do
+  create_table "categories", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.string "name"
+    t.string "short"
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "categorizations", force: :cascade do |t|
+    t.integer "category_id", null: false
+    t.datetime "created_at", null: false
+    t.integer "todo_id", null: false
+    t.datetime "updated_at", null: false
+    t.index ["category_id"], name: "index_categorizations_on_category_id"
+    t.index ["todo_id"], name: "index_categorizations_on_todo_id"
+  end
+
+  create_table "comments", force: :cascade do |t|
+    t.string "body"
+    t.datetime "created_at", null: false
+    t.integer "todo_id", null: false
+    t.datetime "updated_at", null: false
+    t.index ["todo_id"], name: "index_comments_on_todo_id"
+  end
+
   create_table "todos", force: :cascade do |t|
     t.text "body"
     t.string "color"
@@ -23,4 +47,8 @@ ActiveRecord::Schema[8.1].define(version: 2025_10_25_190226) do
     t.string "title"
     t.datetime "updated_at", null: false
   end
+
+  add_foreign_key "categorizations", "categories"
+  add_foreign_key "categorizations", "todos"
+  add_foreign_key "comments", "todos"
 end
