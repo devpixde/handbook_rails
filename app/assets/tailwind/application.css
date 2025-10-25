@@ -3,10 +3,25 @@
 
 @layer base {
 
-    h1{
-        @apply text-2xl font-bold bg-orange-500 leading-tight;
+    h1 {
+        @apply text-2xl font-bold
     }
-    p{
-        @apply p-6 font-bold text-xl;
+
+    body {
+        @apply m-0 p-0 flex flex-col min-h-screen
     }
+
+    header {
+        @apply m-0 p-0 flex-none p-4 bg-slate-600 text-white border border-gray-400;
+    }
+
+    main {
+        @apply m-0 p-0 flex-1 p-4;
+    }
+
+    footer {
+        @apply m-0 p-0 flex-none p-4 bg-slate-300 border border-gray-400;
+    }
+
+
 }

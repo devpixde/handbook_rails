@@ -36,7 +36,7 @@ No merging is done, the repos is just to show and implement features
 - Rails 8.1.0
 
 ```shell
- rails new handbook_rails --css=tailwind
+ rails new handbook_rails --css tailwind
 ```
 
 To get autoloading during development, added the following gem to Gemfile
