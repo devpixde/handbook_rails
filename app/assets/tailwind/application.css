@@ -1,1 +1,12 @@
 @import "tailwindcss";
+
+
+@layer base {
+
+    h1{
+        @apply text-2xl font-bold bg-orange-500 leading-tight;
+    }
+    p{
+        @apply p-6 font-bold text-xl;
+    }
+}
