@@ -1,34 +1,32 @@
-<div id="<%= dom_id todo %>" class="w-full sm:w-auto my-5 space-y-5">
-  <div>
-    <strong class="block font-medium mb-1">Title:</strong>
+<div id="<%= dom_id todo %>" class="todo-tile sm:w-auto my-5 space-y-5 p-5 rounded-lg shadow-md border border-gray-200" style="background-color: <%= todo.color %>;">
+  <h2>
     <%= todo.title %>
-  </div>
-  <div>
-    <strong class="block font-medium mb-1">Body:</strong>
+  </h2>
+  <div class="p-2 rounded-lg bg-amber-50">
     <%= todo.body %>
   </div>
-  <div>
-    <strong class="block font-medium mb-1">Color:</strong>
-    <%= todo.color %>
+  <div class="flex flex-wrap gap-2">
+    <div>
+      Pinned: <%= checked_unchecked todo.pinned? %>
+    </div>
+    <div>
+      Deleted: <%= checked_unchecked todo.deleted? %>
+    </div>
+    <div>
+      Published:<%= checked_unchecked todo.published? %>
+    </div>
+    <div>
+      Done:<%= checked_unchecked todo.done? %>
+    </div>
   </div>
   <div>
-    <strong class="block font-medium mb-1">Pinned:</strong>
-    <%= todo.pinned? ? "Yes" : "No" %>
-  </div>
-  <div>
-    <strong class="block font-medium mb-1">Deleted:</strong>
-    <%= todo.deleted? ? "Yes" : "No" %>
-  </div>
-  <div>
-    <strong class="block font-medium mb-1">Published:</strong>
-    <%= todo.published? ? "Yes" : "No" %>
-  </div>
-  <div>
-    <strong class="block font-medium mb-1">Duedate:</strong>
+    <strong class="font-medium mb-1">Duedate:</strong>
     <%= todo.duedate %>
   </div>
-  <div>
-    <strong class="block font-medium mb-1">Done:</strong>
-    <%= todo.done? ? "Yes" : "No" %>
+  <hr>
+  <div class="w-full flex justify-center items-center gap-2 m-2">
+    <%= link_to "Show", todo, class: "button" %>
+    <%= link_to "Edit", edit_todo_path(todo), class: "button" %>
+    <%= button_to "Destroy", todo, method: :delete, class: "danger-button", data: { turbo_confirm: "Are you sure?" } %>
   </div>
 </div>
