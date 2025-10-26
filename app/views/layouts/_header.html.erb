@@ -1,0 +1,12 @@
+<header>
+  <%= link_to root_path, class:"flex gap-4 mr-6 no-underline items-center" do %>
+    <%= image_tag 'logo.svg', class: 'logo' %>
+    <h2 class="logo-text">TODO Demo App</h2>
+  <% end %>
+  <nav>
+    <%= link_to 'Todos', todos_path %> |
+    <%= link_to 'Comments', comments_path %> |
+    <%= link_to 'Categories', categories_path %> |
+    <%= link_to 'Categorizations', categorizations_path %>
+  </nav>
+</header>
