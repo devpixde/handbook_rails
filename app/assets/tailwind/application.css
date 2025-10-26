@@ -29,6 +29,10 @@
     a {
         @apply underline;
     }
+
+    b{
+        @apply font-bold text-amber-600;
+    }
 }
 
 .todo-tiles-container {
@@ -54,6 +58,8 @@
 .flash-notice {
     @apply py-2 px-3 bg-green-50 mb-5 text-green-500 font-medium rounded-md inline-block
 }
+
+
 
 
 .logo {
