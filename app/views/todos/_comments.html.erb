@@ -1,0 +1,10 @@
+<% if comments.any? %>
+  <section class="mt-10">
+    <h2>Comments:</h2>
+    <% comments.each do |comment| %>
+      <article class="rounded-2xl border border-gray-200 p-4 mb-4 bg-gray-50">
+        <%=  comment.body %>
+      </article>
+    <% end %>
+  </section>
+<% end %>
