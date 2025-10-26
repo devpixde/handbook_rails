@@ -26,7 +26,9 @@
     }
 }
 
-
-.logo {
+.logo{
+    @apply h-8 w-8;
+}
+.logo-text {
     @apply p-2 bg-amber-700 font-bold rounded-md
 }
