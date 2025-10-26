@@ -38,6 +38,7 @@ todos = 20.times.map do
     pinned: [true, false].sample,
     published: [true, false].sample
   )
+
 end
 
 puts "Erstelle Kommentare..."
