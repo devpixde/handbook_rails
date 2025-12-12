@@ -1,14 +1,48 @@
-<h1 class="font-bold text-6xl">basis</h1>
+<h1 class="font-bold">basis</h1>
 <section>
   <h2 class="font-semibold text-3xl mt-5"></h2>
   <p class="mt-3 text-lg">
-    Wir sind im branch <b>basis</b>
+    Wir sind im branch <b>debug</b>
   </p>
   <p class="mt-3 text-lg">
-    Die Demos weiterer Rails Features werden immer in den von basis abgezweigten <b>demos/&lt;demo&gt;</b> branches angelegt. </demo>
+    In diesem Branch sollen die debug Tipps aus dem Rails Guide gezeigt werden.
   </p>
   <p class="mt-3 text-lg">
+    Siehe: <a href="https://guides.rubyonrails.org/debugging_rails_applications.html">Debugging Rails Applications</a>
   </p>
+    <h3>Helpers zum Debuggen</h3>
+  <p class="mt-3 text-lg">
+    Ein häufiger Task ist es Objekte oder Variablen zu inspizieren:
+
+    <pre><code>&lt;%= debug @variable %&gt;</code></pre>
+
+  Dies rendert die Variable in einem lesbaren Format.
+
+  <br>
+  Beispiel: <a href="/todos/1/edit">/todos/1/edit</a>
+  </p>
+
+  Man kann auch einfach aufrufen:
+  <pre><code>&lt;%= @object.inspect %&gt;</code></pre>
+
+  <h3>console in der View und in Controllern</h3>
+
+  So einfach erzeugt man eine Konsole im Browser:
+  <pre><code>&lt;% console %&gt;</code></pre>
+
+  In der Console ist die aktuelle Umgebung zugänglich
+
+  Im Controller funktioniert es genauso:
+  <pre><code>def new
+    console
+    @post = Post.new
+end  </code></pre>
+
+  <h3>instance_variables in console</h3>
+
+  Die Eingabe von <b>instance_variables</b> in der Console gibt alle aus.
+
+
 </section>
 
 
